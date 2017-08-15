@@ -39,19 +39,19 @@ namespace WpfApplication1
            //     radioButton2.IsChecked = true;
            //     textBlock3.Text = "Goodbye.";
            // }
-            Window1 objWelcome = new Window1();
-            objWelcome.textBlock1.Text = textBox1.Text;
-            objWelcome.textBlock2.Text = textBox2.Text;
-            int x, y, sum;
-            //int key;
-            x = int.Parse(objWelcome.textBlock1.Text);
-            y = int.Parse(objWelcome.textBlock2.Text);
-            sum = x + y;
-            //sum = double.Parse(textBox4.Text);
-            objWelcome.label1.Content = x + y;
-            objWelcome.label2.Content = x - y;
-            objWelcome.Show(); //Sending value from one form to another form.
+            Window2 objWelcome2 = new Window2();
+            objWelcome2.Show(); //Sending value from one form to another form.
             Close();
+        }
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            Window3 objWelcome3 = new Window3();
+            objWelcome3.Show(); //Sending value from one form to another form.
+            Close();
+        }
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

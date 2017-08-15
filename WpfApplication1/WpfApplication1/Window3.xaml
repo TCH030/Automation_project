@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApplication1.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:r="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="SysTem Info" Height="300" Width="658.612">
+    <Grid>
+        <TextBlock>
+            <Label Content="Operating System Version : "></Label>
+            <Label Content="{x:Static r:Environment.OSVersion}"></Label>
+            <LineBreak></LineBreak>
+            <Label Content="Dot NET Version : "></Label>
+            <Label Content="{x:Static r:Environment.Version}"></Label>
+            <LineBreak></LineBreak>
+            <Label Content="Machine Name : "></Label>
+            <Label Content="{x:Static r:Environment.MachineName}"></Label>
+            <LineBreak></LineBreak>
+            <Label Content="User Name : "></Label>
+            <Label Content="{x:Static r:Environment.UserName}"></Label>
+
+            <LineBreak></LineBreak>
+            <Label Content="User Domain Name : "></Label>
+            <Label Content="{x:Static r:Environment.UserDomainName}"></Label>
+            <LineBreak></LineBreak>
+            <Label Content="System Directory : "></Label>
+            <Label Content="{x:Static r:Environment.SystemDirectory}"></Label>
+            <LineBreak></LineBreak>
+            <Label Content="Current Directory : "></Label>
+            <Label Content="{x:Static r:Environment.CurrentDirectory}"></Label>
+            <LineBreak></LineBreak>
+            <Label Content="Command Line : "></Label>
+            <Label Content="{x:Static r:Environment.CommandLine}"></Label>
+        </TextBlock>
+    </Grid>
+</Window>

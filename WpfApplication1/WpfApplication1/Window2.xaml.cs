@@ -52,6 +52,12 @@ namespace WpfApplication1
             }
             this.listView.ItemsSource = viewers;
         }
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow objMainWindows = new MainWindow();
+            objMainWindows.Show(); //Sending value from one form to another form.
+            this.Close();
+        }
 
         private class ViewerApplication
         {

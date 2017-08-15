@@ -8,19 +8,23 @@
         mc:Ignorable="d"
         Title="BrowserInfo" Height="300" Width="300">
 
-
-    <ListView x:Name="listView" SelectionChanged="listView_SelectionChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="48*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listView" SelectionChanged="listView_SelectionChanged" Grid.ColumnSpan="3" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Image Source="{Binding ImageSource}" HorizontalAlignment="Center"/>
-                            <TextBlock Text="{Binding Name}" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{Binding ImageSource}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="button" Content="Close" HorizontalAlignment="Left" Margin="112,240,0,0"  Click="button_Click" VerticalAlignment="Top" Width="75"/>
+    </Grid>
 
-    </ListView>
-    
 </Window>
