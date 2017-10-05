@@ -28,7 +28,7 @@ Input captcha
     Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
 
 Submit Credentials
-    Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    5
+    Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
 
 Open Broser and Login automatically
