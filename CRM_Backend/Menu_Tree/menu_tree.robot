@@ -18,3 +18,10 @@ Open Menu Tree
     Wait Until Page Contains    Player Transaction Report
     Wait Until Page Contains    Player Income
     Wait Until Page Contains    Partner Income
+
+Check System Game Management
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    10
+    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
+    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
+    Click Element    xpath= xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a
