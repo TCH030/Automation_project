@@ -41,7 +41,7 @@ Check Partner Game Management
     Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
     Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[2]/div/a
     Wait Until Page Contains    Game Management    3
-    Wait Until Page Contains    Machine Gun Unicorn
+    Wait Until Page Contains    Machine Gun Unicorn    1
     Wait Until Page Contains    Mirror Magic
     Wait Until Page Contains    Hear Me Roar
     Wait Until Page Contains    Fruity Grooves
