@@ -10,12 +10,12 @@ Open Menu Tree
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    10
     Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait Until Page Contains    System Game Management
-    Wait Until Page Contains    Partner Game Management
-    Wait Until Page Contains    Currency List
-    Wait Until Page Contains    Partner Management
-    Wait Until Page Contains    User Management
-    Wait Until Page Contains    Player Management
-    Wait Until Page Contains    Player Transaction Report
-    Wait Until Page Contains    Player Income
-    Wait Until Page Contains    Partner Income
+    Page Should Contain    System Game Management
+    Page Should Contain    Partner Game Management
+    Page Should Contain    Currency List
+    Page Should Contain    Partner Management
+    Page Should Contain    User Management
+    Page Should Contain    Player Management
+    Page Should Contain    Player Transaction Report
+    Page Should Contain    Player Income
+    Page Should Contain    Partner Income
