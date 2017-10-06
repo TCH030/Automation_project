@@ -1,6 +1,7 @@
 *** Settings ***
 Test Teardown     Close Browser
 Resource          ../Login.robot
+Resource          ./xpath_resource.robot    # using resource to store xpath and all other Variables
 
 *** Variables ***
 
@@ -17,11 +18,43 @@ Check System Game Management
     ${Get_Game_ID}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[2]
     ${Get_Game_Status}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[4]/div/button
     ${Get_Geme_LaunchDate}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[3]
-    Should Be Equal    ${Get_Page_Title}    Game Management
+    ${Get_Game_Bloodlines}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[1]
+    ${Get_Game_Name_Machine Gun Unicorn}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[2]/td[1]
+    ${Get_Game_Mirror Magic}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[3]/td[1]
+    ${Get_Game_Hear Me Roar}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[4]/td[1]
+    ${Get_Game_Fruity Grooves}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[5]/td[1]
+    ${Get_Game_Name_Sea Raider}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[6]/td[1]
+    ${Get_Game_Beir Fest}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[7]/td[1]
+    ${Get_Game_Bark In The Park}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[8]/td[1]
+    ${Get_Game_Rumpelthrillspins}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[9]/td[1]
+    ${Get_Game_BL_M4_V2_RECORDER}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[10]/td[1]
+    ${Get_Game_test123}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[11]/td[1]
+    ${Get_Game_M4-0041;V:1}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[12]/td[1]
+    ${Get_Game_kennytest}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[13]/td[1]
+    ${Get_Game_12313213}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[14]/td[1]
+    ${Get_Game_testgame123}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[15]/td[1]
+    ${Get_Game_Journey To The West}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[16]/td[1]
+    #Should Be Equal    ${Get_Page_Title}    Game Management
     Should Be Equal    ${Get_Game_Name}    Bloodlines
     Should Be Equal    ${Get_Game_ID}    BL_M4_V2_RECORDER;V:1
     Should Be Equal    ${Get_Geme_LaunchDate}    2017/08/22 09:28:46
     Should Be Equal    ${Get_Game_Status}    Active
+    Should Be Equal    ${Get_Game_Bloodlines}    Bloodlines
+    Should Be Equal    ${Get_Game_Name_Machine Gun Unicorn}    Machine Gun Unicorn
+    Should Be Equal    ${Get_Game_Mirror Magic}    Mirror Magic
+    Should Be Equal    ${Get_Game_Hear Me Roar}    Hear Me Roar
+    Should Be Equal    ${Get_Game_Fruity Grooves}    Fruity Grooves
+    Should Be Equal    ${Get_Game_Name_Sea Raider}    Sea Raider
+    Should Be Equal    ${Get_Game_Beir Fest}    Beir Fest
+    Should Be Equal    ${Get_Game_Bark In The Park}    Bark In The Park
+    Should Be Equal    ${Get_Game_Rumpelthrillspins}    Rumpelthrillspins
+    Should Be Equal    ${Get_Game_BL_M4_V2_RECORDER}    BL_M4_V2_RECORDER
+    Should Be Equal    ${Get_Game_test123}    test123
+    Should Be Equal    ${Get_Game_M4-0041;V:1}    M4-0041;V:1
+    Should Be Equal    ${Get_Game_kennytest}    kennytest
+    Should Be Equal    ${Get_Game_12313213}    12313213
+    Should Be Equal    ${Get_Game_testgame123}    testgame123
+    Should Be Equal    ${Get_Game_Journey To The West}    Journey To The West
 
 Check Partner Game Management
     Open Broser and Login automatically

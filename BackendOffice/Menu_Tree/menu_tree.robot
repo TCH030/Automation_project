@@ -1,6 +1,7 @@
 *** Settings ***
 Test Teardown     Close Browser
 Resource          ../Login.robot
+Resource          ./xpath_resource.robot    # using resource to store xpath and all other Variables
 
 *** Variables ***
 
