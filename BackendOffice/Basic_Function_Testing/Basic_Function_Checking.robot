@@ -9,9 +9,7 @@ Resource          ./xpath_resource.robot    # using resource to store xpath and 
 Check System Game Management Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
-    #Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
     Click Menu Tree
-    #Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
     Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/div/a
     #Page Should Contain    Game Management    Debug
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
@@ -51,7 +49,7 @@ Check System Game Management Page
     ${Get_ID_12313213}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[14]/td[2]
     ${Get_ID_testgame123}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[15]/td[2]
     ${Get_ID_Journey To The West}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[16]/td[2]
-    #Should Be Equal    ${Get_Page_Title}    Game Management
+    Should Be Equal    ${Get_Page_Title}    Game Management
     Should Be Equal    ${Get_Game_Name}    Bloodlines
     Should Be Equal    ${Get_Game_ID}    BL_M4_V2_RECORDER;V:1
     Should Be Equal    ${Get_Geme_LaunchDate}    2017/08/22 09:28:46
