@@ -6,6 +6,14 @@ Resource          ./xpath_resource.robot    # using resource to store xpath and 
 *** Variables ***
 
 *** Test Cases ***
+Check CDN Domain
+    Open Broser and Login automatically
+    Click Menu Tree
+    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/div/a
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/div/button    2
+    ${CDN_DOMAIN}    Get Value    Xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div/div/div[2]/div/input
+    Should Be Equal    ${CDN_DOMAIN}    wcs.star0ad.com/jkjk
+
 Create Game with Empty Game Name
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2

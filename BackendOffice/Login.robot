@@ -13,7 +13,7 @@ ${SERVER}         http://172.16.50.51:9000    # DevServer
 
 *** Keywords ***
 Open Broser to Login Page
-    Open Browser    ${SERVER}    ${BROWSER}    1
+    Open Browser    ${SERVER}    ${BROWSER}    0
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
 

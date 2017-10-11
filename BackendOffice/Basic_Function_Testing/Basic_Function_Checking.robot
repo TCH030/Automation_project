@@ -212,18 +212,16 @@ Check Player Transaction Report Page
     Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
     Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[8]/div/a
     Page Should Contain    User Id:
-    Page Should Contain    Time Range Presets
-    Page Should Contain    Start Date
-    Page Should Contain    End Date
-    Page Should Contain    Partner
-    Page Should Contain    View By
-    Page Should Contain    Start Time
-    Page Should Contain    End Time
-    Page Should Contain    Report Currency
-    Page Should Contain    Game
     Page Should Contain    Query Type
-    Page Should Contain    TimeZone
+    Page Should Contain    Games
     Page Should Contain    partnerID
+    Page Should Contain    TimeZone
+    Page Should Contain    Time Range Presets
+    Page Should Contain    Start Date:
+    Page Should Contain    Hour:
+    Page Should Contain    End Date:
+    Page Should Contain    Hour:
+    Page Should Contain    Results per Page:
     Page Should Contain    Transaction ID:
 
 Check Player Income page
