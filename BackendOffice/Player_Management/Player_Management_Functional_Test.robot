@@ -205,19 +205,46 @@ Adjust Player Balance
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
     Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
     Click Edit Link
-	Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span
-	Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input 2.51
-	Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]    #Click edit button
-	Sleep    0.5
-	Confirm Action
-	Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span
+    Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input    2.51
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]    #Click edit button
+    Sleep    0.5
+    Confirm Action
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
     Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
-    ${Player_Balance}}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[7]
-    Should be Equal    ${Player_Status}    Inactive
-	
+    ${Player_Balance}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[7]
+    Should be Equal    ${Player_Balance}    9.60
+    Sleep    1
+    Reset Balance
+
+Inactive and Active Player in View Page
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Click Player Management Link
+    Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
+	Click Element    xpath=//*[@id="root"]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+	sleep    1
+	Confirm Action
+	Sleep    3
+	${Player_status_deactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+	Should BE Equal    ${Player_status_deactive}    Inactive
+	Sleep    1
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+	Sleep    1
+	Confirm Action
+	Sleep    3
+	${Player_status_Reactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+	Should BE Equal    ${Player_status_Reactive}    Active
+
 Click Cancel Button
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
