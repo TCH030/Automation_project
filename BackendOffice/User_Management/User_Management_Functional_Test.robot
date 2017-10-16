@@ -106,7 +106,7 @@ Edit User's info Page
     Should be Equal    ${User_Status}    Active
     Should be empty    ${user_Password}
     Should be Equal    ${Change_Password}    Change Password
-    Should be Equal    ${User_E-mail}    aa@aa
+    Should be Equal    ${User_E-mail}    aa@aa.com
     #Checking Check box selected status
     Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[1]/td[2]/label/span/input
     Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
@@ -293,7 +293,7 @@ Check User Management View Function
     Should be Equal    ${User_Name}    autotestuser
     Should be Equal    ${User_Status}    Active
     Should be empty    ${user_Password}
-    Should be Equal    ${User_E-mail}    aa@aa
+    Should be Equal    ${User_E-mail}    aa@aa.ccom
     #Checking Check box selected status
     Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[1]/td[2]/label/span/input
     Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
