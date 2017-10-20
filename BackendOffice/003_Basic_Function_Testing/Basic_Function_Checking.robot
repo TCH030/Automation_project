@@ -6,12 +6,13 @@ Resource          ./xpath_resource.robot    # using resource to store xpath and 
 *** Variables ***
 
 *** Test Cases ***
-Check System Game Management Page
+Check Game Management Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
     Click Menu Tree
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/div/a
-    #Page Should Contain    Game Management    Debug
+    Open System Management submenu
+    Click Game Management in submenu
+    Click Element    xpath=html/body/div[1]/div/div/section/div/h3/a  
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
     ${Get_Game_Name}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[1]
     ${Get_Game_ID}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[2]
@@ -87,12 +88,12 @@ Check System Game Management Page
     Should Be Equal    ${Get_ID_testgame123}    testgame123
     Should Be Equal    ${Get_ID_Journey To The West}    M4-0067;V:1
 
-Check Partner Game Management Page
+Check Game Management (Page Partner)
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    10
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[2]/div/a
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
+    Click Menu Tree
+    Click Partner Management submenu
+    Click Game Management in submenu (Partner)
     Page Should Contain    Game Management    3
     Page Should Contain    Machine Gun Unicorn    1
     Page Should Contain    Mirror Magic    3
@@ -113,11 +114,10 @@ Check Partner Game Management Page
 Check Currency Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    10
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[3]/div/a
-    Wait Until Page Contains    Currency List
-    Wait Until Page Contains    VND
+    Click Menu Tree
+    Open System Management submenu
+    Click Currency Management in submenu
+    Wait Until Page Contains    Currency Management   
     Wait Until Page Contains    VND
     Wait Until Page Contains    USD
     Wait Until Page Contains    JPY
@@ -133,23 +133,16 @@ Check Currency Page
     Wait Until Page Contains    Thai Baht
     Wait Until Page Contains    Bulgarian Lev
     Wait Until Page Contains    Korean Republic Won
-    Wait Until Page Contains    2017/10/02 17:31
-    Wait Until Page Contains    2017/08/09 17:36
-    Wait Until Page Contains    2017/09/13 14:32
-    Wait Until Page Contains    2017/09/11 14:33
-    Wait Until Page Contains    2017/09/11 14:33
-    Wait Until Page Contains    2017/09/21 15:02
-    Wait Until Page Contains    2017/09/27 10:24
-    Wait Until Page Contains    2017/10/03 14:42
 
 Check Partner Management Page
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    10
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[4]/div/a
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
+    Click Menu Tree
+    Open System Management submenu
+    Click Partner Management in submenu
+	Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/h3/a    5
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
-    Should Be Equal    ${Get_Page_Title}    Partner List
+    Should Be Equal    ${Get_Page_Title}    Partner Management
     Page Should Contain    ${Get_Page_Title}
     Page Should Contain    BBIN Staging
     Page Should Contain    c304afdf-2f61-6369-c088-924f99e1be1a
@@ -162,23 +155,23 @@ Check Partner Management Page
 Check User Management Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    10
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a
+    Click Menu Tree
+    Open System Management submenu
+    Click User Management in submenu
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
     Should Be Equal    ${Get_Page_Title}    User Management
     Page Should Contain    User Name
     Page Should Contain    Partner
-    Page Should Contain    GPK Staging
+    #Page Should Contain    GPK Staging
     Page Should Contain    Status
     Page Should Contain    Result per page
 
 Check Player Management Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[6]/div/a
+    Click Menu Tree
+    Click Partner Management submenu
+    Click Player Management in submenu
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
     Should Be Equal    ${Get_Page_Title}    Player Management
     Page Should Contain    Player ID
@@ -186,14 +179,14 @@ Check Player Management Page
     Page Should Contain    Result per page
     Page Should Contain    Player Type
 
-Check Game Income by Partner Page
+Check Game Income Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[7]/div/a
+    Click Menu Tree
+    Click Report submenu
+    Click Game income in submenu
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
-    Should Be Equal    ${Get_Page_Title}    Game Income by Partner
+    Should Be Equal    ${Get_Page_Title}    Game Income
     Page Should Contain    Time Zone
     Page Should Contain    Time Range Presets
     Page Should Contain    Start Date
@@ -205,12 +198,12 @@ Check Game Income by Partner Page
     Page Should Contain    Report Currency
     Page Should Contain    Game
 
-Check Player Transaction Report Page
+Check Player Transaction History Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[8]/div/a
+    Click Menu Tree
+    Click Report submenu
+    Click GPlayer Transaction History in submenu
     Page Should Contain    User Id:
     Page Should Contain    Query Type
     Page Should Contain    Games
@@ -224,14 +217,14 @@ Check Player Transaction Report Page
     Page Should Contain    Results per Page:
     Page Should Contain    Transaction ID:
 
-Check Player Income page
+Check TOP 100 Players Across Platform page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[9]/div/a
+    Click Menu Tree
+    Click Report submenu
+    Click TOP 100 Players Across Platform in submenu
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
-    Should Be Equal    ${Get_Page_Title}    Player Income
+    Should Be Equal    ${Get_Page_Title}    TOP 100 Players Across Platform
     Page Should Contain    Time Zone
     Page Should Contain    Time Range Presets
     Page Should Contain    Start Date
@@ -241,14 +234,14 @@ Check Player Income page
     Page Should Contain    End Time
     Page Should Contain    Report Currency
 
-Check Partner Income Page
+Check Game Comparison Across Partner Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[10]/div/a
+    Click Menu Tree
+    Click Report submenu
+    Click Game Comparison Across Partner in submenu
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
-    Should Be Equal    ${Get_Page_Title}    Partner Income
+    Should Be Equal    ${Get_Page_Title}    Game Comparison Across Partner
     Page Should Contain    Time Zone
     Page Should Contain    Time Range Presets
     Page Should Contain    Start Date

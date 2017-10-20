@@ -8,8 +8,8 @@ Resource          Resource.robot
 Resource          Library.robot
 
 *** Variables ***
-${DELAY}          0
-${SERVER}         http://172.16.50.51:9000    # DevServer
+#${DELAY}         0
+#${SERVER}        http://172.16.50.51:9000    # DevServer
 
 *** Keywords ***
 Open Broser to Login Page
@@ -18,17 +18,17 @@ Open Broser to Login Page
     Set Selenium Speed    ${DELAY}
 
 Input Username
-    Input Text    userName    kenny
+    Input Text    userName    ${USERNAME}
 
 Input Password
-    Input Text    password    123456
+    Input Text    password    ${PASSWORD}
 
 Input captcha
     ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
     Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
 
 Submit Credentials
-    Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
+    Sleep    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
 
 Open Broser and Login automatically
@@ -37,3 +37,4 @@ Open Broser and Login automatically
     Input Password
     Input captcha
     Submit Credentials
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/div/div[1]/div    5

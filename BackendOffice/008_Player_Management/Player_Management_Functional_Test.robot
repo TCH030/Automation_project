@@ -10,7 +10,8 @@ Check Create Player Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     Page Should Contain    Player Id
     Page Should Contain    Partner
@@ -26,7 +27,8 @@ Create Player with Empty Player ID
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
     Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
@@ -38,7 +40,8 @@ Check Player Type Option is Showed
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     ${Player_type_House}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[3]/div/div/div[2]/div/div/div/div
     Should Be Equal    ${Player_type_House}    House
@@ -52,7 +55,8 @@ Check Player Status Option is Showed
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div/div/div
     ${Player_status_Active}    Get Text    xpath=html/body/div[2]/div/div/div/ul/li[1]
@@ -64,7 +68,8 @@ Check Curreny Option is Showed
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/div/div/div
     ${Player_Currency_CNY}    Get Text    xpath=/html/body/div[2]/div/div/div/ul/li[1]
@@ -92,7 +97,8 @@ Check Wallet Type Auto Switch by Partner
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
     Sleep    1
@@ -111,9 +117,10 @@ Query Player's Info
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
@@ -124,7 +131,7 @@ Query Player's Info
     ${Player_currency}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[6]
     ${Player_Balance}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[7]
     ${Player_DateRegistered}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[9]
-    Should be Equal    ${Player_ID}    QATestingAccount001
+    Should be Equal    ${Player_ID}    ${testingaccountID_player}
     Should be Equal    ${Player_type}    HOUSE
     Should be Equal    ${Player_wallettype}    TRANSFER
     Should be Equal    ${Player_currency}    USD
@@ -135,9 +142,10 @@ EDIT Player's Info
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
@@ -153,7 +161,7 @@ EDIT Player's Info
     ${Player_wallettype}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[6]/div/div/div[2]/div/div/div/div
     ${Player_currency}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/div/div/div
     ${Player_Balance}    Get Value    Xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[8]/div/div/div[2]/div/input
-    Should be Equal    ${Player_ID}    QATestingAccount001
+    Should be Equal    ${Player_ID}    ${testingaccountID_player}
     Should be Equal    ${Player_partner}    Company
     Should be Equal    ${Player_type}    HOUSE
     Should be Equal    ${Player_status}    Active
@@ -165,9 +173,10 @@ Edit Player Status
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
@@ -182,7 +191,7 @@ Edit Player Status
     Sleep    1
     Confirm Action
     Sleep    3
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
@@ -197,26 +206,27 @@ Adjust Player Balance
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
     Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
     Click Edit Link
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span
-    Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input    2.51
+    Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input    1.21
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]    #Click edit button
     Sleep    0.5
     Confirm Action
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
     Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
     ${Player_Balance}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[7]
-    Should be Equal    ${Player_Balance}    9.60
+    Should be Equal    ${Player_Balance}    8.30
     Sleep    1
     Reset Balance
 
@@ -224,32 +234,34 @@ Inactive and Active Player in View Page
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    QATestingAccount001
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div    #***
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span    #***
     Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
-	Click Element    xpath=//*[@id="root"]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
-	sleep    1
-	Confirm Action
-	Sleep    3
-	${Player_status_deactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
-	Should BE Equal    ${Player_status_deactive}    Inactive
-	Sleep    1
-	Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
-	Sleep    1
-	Confirm Action
-	Sleep    3
-	${Player_status_Reactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
-	Should BE Equal    ${Player_status_Reactive}    Active
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button    #***
+    sleep    1
+    Confirm Action
+    Sleep    3
+    ${Player_status_deactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    Should BE Equal    ${Player_status_deactive}    Inactive
+    Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    Sleep    1
+    Confirm Action
+    Sleep    3
+    ${Player_status_Reactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    Should BE Equal    ${Player_status_Reactive}    Active
 
 Click Cancel Button
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Management Link
+    Click Partner Management submenu
+	Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[1]
     Sleep    0.5

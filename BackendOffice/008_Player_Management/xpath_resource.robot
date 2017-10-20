@@ -1,16 +1,6 @@
 *** Variables ***
 
 *** Keywords ***
-Click Menu Tree
-    Sleep    0.5
-    Click Element    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em
-    Wait until element is visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[5]/div/a    5
-
-Click Player Management Link
-    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[6]/div/a
-    Sleep    0.5
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/div/button    5
-
 Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/h3/div/button    #click Create New Currency Button
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[1]    2
@@ -32,6 +22,6 @@ Rest Player Status
 Reset Balance
     Click Edit Link
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input    -2.51
+    Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input    -1.21
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]    #Click edit button
     Sleep    0.5
