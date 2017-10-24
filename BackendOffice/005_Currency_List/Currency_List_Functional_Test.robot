@@ -63,7 +63,30 @@ Create Curreny with Empty Exchange Rate (CYN)
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
     ${Empty_error_message}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div
     Should be Equal    ${Empty_error_message}    This field is required
-
+Create New Currency
+    ${RandonCurrency}=    Generate Random String    3    [UPPER]
+    log    ${RandonCurrency}
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+    Click Currency Management in submenu
+    Click Create New Button
+	Sleep    1
+	Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    ${RandonCurrency}
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input    ${RandonCurrency}
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[3]/div/div/div[2]/div/input    1
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    1
+    Click Create Button
+	Choose OK On Next Confirmation
+    Confirm Action
+	Sleep    1
+	page should contain    ${RandonCurrency}
+	#Delete USER via API Request
+    Create Session    BO    http://172.16.50.52:8083
+    ${resp}=    Delete    BO    api/currency?baseCurrency=USD&targetCurrency=${RandonCurrency}
+    Should Be Equal As Strings    ${resp.status_code}    200
+	
 Click Cancel Button
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2

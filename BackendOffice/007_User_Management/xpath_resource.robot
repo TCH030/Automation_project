@@ -54,3 +54,6 @@ Rest Password
     Confirm Action
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+
+Click Create Button
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]

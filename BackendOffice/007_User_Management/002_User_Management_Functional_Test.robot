@@ -73,6 +73,56 @@ Create User with Empty Confirm Password
     ${Empty_error_message}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/div
     Should be Equal    ${Empty_error_message}    This field is required
 
+Create New USER
+    ${RandonNumber}=    Generate Random String    3    [NUMBERS]
+    ${Randon_create_account}=    set variable    qatesting${RandonNumber}
+    log    ${Randon_create_account}
+	${RandonPwd}=    Generate Random String    6    [NUMBERS]
+    log    ${RandonPwd}
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+    Click User Management in submenu
+    Click Create New Button
+	
+    Sleep    2
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/div/div/div
+	Sleep    1
+    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[15]
+	Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input    ${Randon_create_account}
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    ${RandonPwd}
+	Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/input    ${RandonPwd}
+    Sleep    1
+	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
+	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
+	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
+    Click Create Button
+    Sleep    1
+    Choose OK On Next Confirmation
+    Confirm Action
+	Close Browser
+	Sleep    2
+	Open Browser    ${SERVER}    ${BROWSER}    0
+    Maximize Browser Window
+    Input Text    userName    ${Randon_create_account}
+    Input Text    password    ${RandonPwd}
+    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
+    Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
+    Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
+    Click Menu Tree
+    Wait Until element is Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/a    1
+    Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/a
+    Sleep    1
+    Element Should Be Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/ul/li[1]/div/a
+    Close Browser
+    #Delete USER via API Request
+    Create Session    BO    http://172.16.50.52:8082
+    ${resp}=    Delete    BO    /api/accounts/${Randon_create_account}
+    Should Be Equal As Strings    ${resp.status_code}    200
+	
 Query User's info
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
@@ -152,12 +202,12 @@ Edit User's info Page
     Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
 	${permission_title_ConfirmationHistory}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[1]/span
 	should be equal    ${permission_title_ConfirmationHistory}    Currency Management
-#    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input
-#    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input    
-# 	 Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input
-#	 Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input	
-#    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
-#    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input    
+ 	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input	
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
     #Partner Management Check box selected status
 	${grouptitle_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[7]/td[1]/span
     should be equal    ${grouptitle_PartnerManagement}    Partner Management

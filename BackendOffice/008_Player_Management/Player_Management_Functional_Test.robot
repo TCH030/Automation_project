@@ -11,7 +11,7 @@ Check Create Player Page
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     Page Should Contain    Player Id
     Page Should Contain    Partner
@@ -28,7 +28,7 @@ Create Player with Empty Player ID
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
     Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
@@ -41,7 +41,7 @@ Check Player Type Option is Showed
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     ${Player_type_House}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[3]/div/div/div[2]/div/div/div/div
     Should Be Equal    ${Player_type_House}    House
@@ -56,7 +56,7 @@ Check Player Status Option is Showed
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div/div/div
     ${Player_status_Active}    Get Text    xpath=html/body/div[2]/div/div/div/ul/li[1]
@@ -69,7 +69,7 @@ Check Curreny Option is Showed
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/div/div/div
     ${Player_Currency_CNY}    Get Text    xpath=/html/body/div[2]/div/div/div/ul/li[1]
@@ -98,7 +98,7 @@ Check Wallet Type Auto Switch by Partner
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
     Sleep    1
@@ -113,12 +113,45 @@ Check Wallet Type Auto Switch by Partner
     Should be Equal    ${Wallet_TYPE_Seamless}    Seamless
     Should not be Equal    ${Wallet_TYPE_Seamless}    ${Wallet_TYPE_Transfer}
 
+Create New Player
+    ${RandonNumber}=    Generate Random String    3    [NUMBERS]
+    ${Randon_create_account}=    set variable    qatesting${RandonNumber}
+    log    ${Randon_create_account}
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Click Partner Management submenu
+    Click Player Management in submenu
+    Click Create New Button
+    Sleep    1
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    ${Randon_create_account}
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
+    Sleep    1
+    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[15]
+    Click Create Button
+    Sleep    1
+    Choose OK On Next Confirmation
+    Confirm Action
+    Wait until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/a    3
+    #Query new Player
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${Randon_create_account}
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
+    Sleep    1
+    Click Search Button
+    ${Player_ID}    GET TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]
+    Should be Equal    ${Player_ID}    ${Randon_create_account}
+    #Delete USER via API Request
+    Create Session    BO    http://172.16.50.52:8082
+    ${resp}=    Delete    BO    /api/players/Company/${Randon_create_account}
+    Should Be Equal As Strings    ${resp.status_code}    200
+
 Query Player's Info
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
@@ -143,7 +176,7 @@ EDIT Player's Info
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
@@ -174,7 +207,7 @@ Edit Player Status
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
@@ -207,7 +240,7 @@ Adjust Player Balance
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
@@ -235,7 +268,7 @@ Inactive and Active Player in View Page
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div    #***
@@ -261,7 +294,7 @@ Click Cancel Button
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Partner Management submenu
-	Click Player Management in submenu
+    Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[1]
     Sleep    0.5

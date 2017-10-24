@@ -28,6 +28,28 @@ Create Game with Empty Game Name
     ${Empty_error_message}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/div
     Should be Equal    ${Empty_error_message}    This field is required
 
+Create New Game
+    ${RandonNumber}=    Generate Random String    3    [NUMBERS]
+    ${Randon_create_Game}=    set variable    qatesting${RandonNumber}
+	Log    ${Randon_create_Game}
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+	Click Game Management in submenu
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/div/button    2
+    Click Element    xpath=html/body/div[1]/div/div/section/div/h3/div/button
+    Sleep    1
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    ${Randon_create_Game}
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Choose OK On Next Confirmation
+    Confirm Action
+    Sleep    1
+	Page should contain    ${Randon_create_Game}
+	#Delete USER via API Request
+    Create Session    BO    http://172.16.50.52:8086
+    ${resp}=    Delete    BO    /api/games/${Randon_create_Game}
+    Should Be Equal As Strings    ${resp.status_code}    200
 Click Cancel Button
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2

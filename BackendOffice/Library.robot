@@ -4,3 +4,5 @@ Library           Collections    #Library    DatabaseLibrary
 Library           String
 Library           DateTime
 Library           OperatingSystem
+Library           RequestsLibrary
+Library           Collections
