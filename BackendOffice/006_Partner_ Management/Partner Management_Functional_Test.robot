@@ -46,8 +46,8 @@ Create New Partner
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
 	Choose OK On Next Confirmation
     Confirm Action
-	Sleep    1
-	Page should contain    ${RandonPartnerName}
+	#Sleep    1
+	#Page should contain    ${RandonPartnerName}
 	Sleep    1
     #Delete USER via API Request
     Create Session    BO    http://172.16.50.52:8086

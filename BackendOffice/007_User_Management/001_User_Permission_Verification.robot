@@ -18,9 +18,9 @@ Disable User Management view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -55,11 +55,11 @@ Disable User Management view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -77,9 +77,9 @@ Disable User Management Create permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -114,9 +114,9 @@ Disable User Management Create permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -134,9 +134,9 @@ Disable User Management EDIT permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -157,7 +157,7 @@ Disable User Management EDIT permission
     Open System Management submenu
     Click User Management in submenu
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div[1]/div/table/tbody/tr[1]/td[7]/span/a[2]
+    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div[1]/div/div/table/tbody/tr[1]/td[7]/span/a[2]
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -171,9 +171,9 @@ Disable User Management EDIT permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -191,9 +191,9 @@ Disable Partner Management view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -228,11 +228,11 @@ Disable Partner Management view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -250,9 +250,9 @@ Disable Partner Management Create permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -287,9 +287,9 @@ Disable Partner Management Create permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -307,9 +307,9 @@ Disable Partner Management Edit permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -330,7 +330,7 @@ Disable Partner Management Edit permission
     Open System Management submenu
     Click Partner Management in submenu
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div/div/div/table/tbody/tr[1]/td[5]/span/a[2]
+    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div/div/div/div/table/tbody/tr[1]/td[5]/span/a[2]
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -344,9 +344,9 @@ Disable Partner Management Edit permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -364,9 +364,9 @@ Disable Game Management view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -401,11 +401,11 @@ Disable Game Management view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -423,9 +423,9 @@ Disable Game Management Create permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -460,9 +460,9 @@ Disable Game Management Create permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -480,9 +480,9 @@ Disable Game Management Edit permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -503,7 +503,7 @@ Disable Game Management Edit permission
     Open System Management submenu
     Click Game Management in submenu
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[5]/span/a
+    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/div/table/tbody/tr[1]/td[5]/span/a
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -517,9 +517,9 @@ Disable Game Management Edit permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -537,9 +537,9 @@ Disable Currency Management view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -560,7 +560,7 @@ Disable Currency Management view permission
     Wait Until element is Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/a    1
     Click Element    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/a
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/ul/li[4]/div/a
+    Element Should Not Be Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/ul/li[4]/div/a
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -574,11 +574,11 @@ Disable Currency Management view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -596,9 +596,9 @@ Disable Currency Management Create permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -619,7 +619,7 @@ Disable Currency Management Create permission
     Open System Management submenu
     Click User Management in submenu
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div[2]/table/tbody/tr[1]/td[6]/div/button
+    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div[2]/a
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -633,9 +633,9 @@ Disable Currency Management Create permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -653,9 +653,9 @@ Disable Currency Management Edit permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -676,7 +676,7 @@ Disable Currency Management Edit permission
     Open System Management submenu
     Click Currency Management in submenu
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div[1]/table/tbody/tr[1]/td[6]/div/button
+    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div[1]/div/table/tbody/tr[1]/td[6]/div/button
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -690,9 +690,9 @@ Disable Currency Management Edit permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -710,9 +710,9 @@ Disable Currency History view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -733,7 +733,7 @@ Disable Currency History view permission
     Open System Management submenu
     Click Currency Management in submenu
     Sleep    1
-    Element Should not Be Visible    xpath=html/body/div[1]/div/div/section/div/h3/div/button[2]
+    Element should not be visible    xpath=html/body/div[1]/div/div/section/div/h3/div/button[2]
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -747,13 +747,14 @@ Disable Currency History view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     Sleep    0.5
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[2]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
@@ -769,9 +770,9 @@ Disable Game Management (Partner) view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -805,11 +806,11 @@ Disable Game Management (Partner) view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
     Sleep    0.5
-    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[2]/label/span/input
-    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
+    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[2]/label/span/input
+    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -827,9 +828,9 @@ Disable Player Management view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -863,11 +864,11 @@ Disable Player Management view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -885,9 +886,9 @@ Disable Create Player permission in Partner Management
     Click Search button
     Click Edit Link
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -921,9 +922,9 @@ Disable Create Player permission in Partner Management
     Click Search button
     Click Edit Link
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -941,9 +942,9 @@ Disable Edit Player permission in Partner Management
     Click Search button
     Click Edit Link
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -971,7 +972,7 @@ Disable Edit Player permission in Partner Management
     Sleep    0.5
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Sleep    1
-    Element should not be visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[11]/span/a[1]
+    Element should not be visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[11]/span/a[1]
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
@@ -984,9 +985,9 @@ Disable Edit Player permission in Partner Management
     Click Search button
     Click Edit Link
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1004,9 +1005,9 @@ Disable Game Income view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1040,9 +1041,9 @@ Disable Game Income view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1060,9 +1061,9 @@ Disable Game Comparison Across Partner view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1096,9 +1097,9 @@ Disable Game Comparison Across Partner view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1116,9 +1117,9 @@ Disable TOP 100 Players Across Platform view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1152,9 +1153,9 @@ Disable TOP 100 Players Across Platform view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1172,9 +1173,9 @@ DisablePlayer Transaction History view permission
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
     Click Edit Link
     Sleep    2
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
     Sleep    0.5
-    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
@@ -1208,11 +1209,14 @@ DisablePlayer Transaction History view permission
     Click Edit Link
     Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span    5
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
     Sleep    0.5
-    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
     sleep    1
     Click Edit Button
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
+
+Permission Reset
+    Rest All Permission

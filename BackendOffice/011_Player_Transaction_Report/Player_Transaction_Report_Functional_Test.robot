@@ -148,10 +148,10 @@ Download File checking-Default
     Click Search button
     Sleep    5
     Click Export button
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
 
 Download File checking-Partner_Selected
     Open Broser and Login automatically
@@ -166,10 +166,10 @@ Download File checking-Partner_Selected
     Click Search button
     Sleep    5
     Click Export button
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
 
 Download File checking-Game_Selected
     Open Broser and Login automatically
@@ -184,10 +184,10 @@ Download File checking-Game_Selected
     Click Search button
     Sleep    5
     Click Export button
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
 
 Download File checking-View_Selected
     Open Broser and Login automatically
@@ -203,10 +203,10 @@ Download File checking-View_Selected
     Sleep    5
     Click Export button
     Sleep    5
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv    10
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv    10
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv    10
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv    10
 
 Download File checking-GAME/Partner_Selected
     Open Broser and Login automatically
@@ -228,10 +228,10 @@ Download File checking-GAME/Partner_Selected
     Sleep    5
     Click Export button
     Sleep    5
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv    10
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv    10
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv    10
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv    10
 
 Download File checking-GAME/View_Selected
     Open Broser and Login automatically
@@ -257,10 +257,10 @@ Download File checking-GAME/View_Selected
     Sleep    5
     Click Export button
     Sleep    5
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv    10
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv    10
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv    10
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv    10
 
 Incorrect Date format
     Open Broser and Login automatically
@@ -313,11 +313,11 @@ End time value is early then Start time
     should be equal    ${error_endtime}    End Date can not be before Start Date
 
 Test123
-    #    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
-    #    ${GETFILE}    get file    C:\\Users\\tsaic30\\Downloads\\npp-robot-master.zip
+    #    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
+    #    ${GETFILE}    get file    C:\\Users\\${Accountname}\\Downloads\\npp-robot-master.zip
     #    log    ${GETFILE}
-    #    Remove File    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
-    #    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Test.txt
+    #    Remove File    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
+    #    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Test.txt
     #    Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
     Create Session    BO    http://172.16.50.52:8082
     ${resp}=    Delete    BO    /api/players/Company/QAPlayer001

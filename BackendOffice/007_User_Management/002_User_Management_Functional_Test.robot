@@ -85,7 +85,6 @@ Create New USER
     Open System Management submenu
     Click User Management in submenu
     Click Create New Button
-	
     Sleep    2
 	Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/div/div/div
 	Sleep    1
@@ -94,12 +93,12 @@ Create New USER
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    ${RandonPwd}
 	Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/input    ${RandonPwd}
     Sleep    1
-	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
-	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
-	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
+	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+	Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     Click Create Button
     Sleep    1
-    Choose OK On Next Confirmation
+    #  Choose OK On Next Confirmation
     Confirm Action
 	Close Browser
 	Sleep    2
@@ -122,6 +121,7 @@ Create New USER
     Create Session    BO    http://172.16.50.52:8082
     ${resp}=    Delete    BO    /api/accounts/${Randon_create_account}
     Should Be Equal As Strings    ${resp.status_code}    200
+
 	
 Query User's info
     Open Broser and Login automatically
@@ -134,10 +134,10 @@ Query User's info
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    autotestuser
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
-    Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]
+    Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]
     Sleep    1
-    ${User_ID}    get text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]
-    ${User_creater}    get text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[4]
+    ${User_ID}    get text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]
+    ${User_creater}    get text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[4]
     Should Be Equal    ${User_ID}    autotestuser
     #Should Be Equal    ${User_creater}    kenny
 
@@ -166,102 +166,102 @@ Edit User's info Page
     Should be Equal    ${Change_Password}    Change Password
     Should be Equal    ${User_E-mail}    aa@aa.com
     #System Management Check box selected status
-	${grouptitle_SystemManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[1]/td[1]/span
+	${grouptitle_SystemManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[1]/td[1]/span
     should be equal    ${grouptitle_SystemManagement}    System Management
-	${permission_title_UserManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[1]/span
+	${permission_title_UserManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[1]/span
 	should be equal    ${permission_title_UserManagement}    User Management
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
-	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
-	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
-	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
-	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[1]/span
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
+	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
+	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[1]/span
 	should be equal    ${permission_title_PartnerManagement}    Partner Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
-    ${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[1]/span
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    ${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[1]/span
 	should be equal    ${permission_title_GameManagement}    Game Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
-    ELement Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
-	${permission_title_CurrencyManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[1]/span
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    ELement Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
+	${permission_title_CurrencyManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[1]/span
 	should be equal    ${permission_title_CurrencyManagement}    Currency Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
-    Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
-    Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
-	${permission_title_ConfirmationHistory}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[1]/span
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
+    Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
+	${permission_title_ConfirmationHistory}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[1]/span
 	should be equal    ${permission_title_ConfirmationHistory}    Currency Management
-    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input    
- 	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input	
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[2]/label/span/input    
+ 	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[3]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[3]/label/span/input	
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     #Partner Management Check box selected status
-	${grouptitle_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[7]/td[1]/span
+	${grouptitle_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[7]/td[1]/span
     should be equal    ${grouptitle_PartnerManagement}    Partner Management
-	${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[1]/span
+	${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[1]/span
 	should be equal    ${permission_title_GameManagement}    Game Management	
-	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[2]/label/span/input
-	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[2]/label/span/input
-	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[3]/label/span/input
-	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[3]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
-	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
-	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[1]/span
+	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[2]/label/span/input
+	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[2]/label/span/input
+	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[3]/label/span/input
+	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[3]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
+	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
+	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[1]/span
 	should be equal    ${permission_title_PartnerManagement}    Player Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
     #Report Check box selected status
-	${grouptitle_Report}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[10]/td[1]/span
+	${grouptitle_Report}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[10]/td[1]/span
     should be equal    ${grouptitle_Report}    Report
-	${permission_title_GameIncome}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[1]/span
+	${permission_title_GameIncome}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[1]/span
 	should be equal    ${permission_title_GameIncome}    Game Income
-	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[2]/label/span/input
-	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[2]/label/span/input
-	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[3]/label/span/input
-	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[3]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
-	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
-	${permission_title_Game ComparisonAcrossPartner}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[1]/span
+	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[2]/label/span/input
+	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[2]/label/span/input
+	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[3]/label/span/input
+	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[3]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
+	Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
+	${permission_title_Game ComparisonAcrossPartner}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[1]/span
 	should be equal    ${permission_title_GameComparisonAcrossPartner}    Game Comparison Across Partner
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[2]/label/span/input
-    Element should be enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[2]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[3]/label/span/input
-    Element should be enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
-    ${permission_title_TOP100}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[1]/span
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[2]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[3]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    ${permission_title_TOP100}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[1]/span
 	should be equal    ${permission_title_Top100}    TOP 100 Players Across Platform
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[2]/label/span/input
-    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[2]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[3]/label/span/input
-    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
-    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
-	${permission_title_Player Transaction History}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[1]/span
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[2]/label/span/input
+    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[3]/label/span/input
+    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
+    Element Should be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
+	${permission_title_Player Transaction History}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[1]/span
 	should be equal    ${permission_title_PlayerTransactionHistory}    Player Transaction History
-    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[2]/label/span/input
-    Element Should Be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[2]/label/span/input
-    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[3]/label/span/input
-    Element Should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
-    Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[2]/label/span/input
+    Element Should Be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[2]/label/span/input
+    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[3]/label/span/input
+    Element Should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Element Should Be Enabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
 	
 Cancel Change Password
     Open Broser and Login automatically
@@ -342,6 +342,75 @@ Login after Change Password
     Close Browser
     Rest Password
 
+Deactive User Account
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+    Click User Management in submenu
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/h3/a    2
+    Sleep    1
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    autotestuser
+    Sleep    1
+	Click Search button
+	Click Edit Link
+	Sleep    1
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[3]/div/div/div[2]/div/div/div/div
+	Wait until element is visible    xpath=/html/body/div[2]/div/div/div/ul/li[2]    5
+	Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
+	Sleep    1
+	Click Edit Button
+	Choose OK On Next Confirmation
+    Confirm Action
+    Sleep    1
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    autotestuser
+    Sleep    1	
+	Click Search button
+    ${status}    get text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[3]/div/button
+	Should be Equal    ${status}    Inactive
+	Close Browser
+	Rest Status
+	
+Login After Deactive User Account
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+    Click User Management in submenu
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/h3/a    2
+    Sleep    1
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    autotestuser
+    Sleep    1
+	Click Search button
+	Click Edit Link
+	Sleep    1
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[3]/div/div/div[2]/div/div/div/div
+	Wait until element is visible    xpath=/html/body/div[2]/div/div/div/ul/li[2]    5
+	Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
+	Sleep    1
+	Click Edit Button
+    Choose OK On Next Confirmation
+    Confirm Action
+	Sleep    1
+	Close Browser
+	Open Browser    ${SERVER}    ${BROWSER}    0
+    Maximize Browser Window
+    Input Text    userName    autotestuser
+    Input Text    password    123456
+    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+	Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
+	Sleep    1
+    Choose OK On Next Confirmation
+	${message}=    confirm action
+	Should be equal    ${message}    Error: Invalid email or password
+    Choose OK On Next Confirmation
+	${Get_error}    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/div[2]
+	should be equal    ${Get_error}    Forbidden
+	Close Browser
+	Rest Status	
+	
+	
 Edit Email
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
@@ -372,21 +441,21 @@ Edit Email
     Choose OK On Next Confirmation
     Confirm Action
 
-Query all Active User
-    Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
-    Click Menu Tree
-    Open System Management submenu
-    Click User Management in submenu
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/h3/a    2
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[3]/div/div[2]/div/div/div/div
-    Wait Until Element is Visible    Xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
-    Sleep    1
-    ${Status}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[3]/div/div[2]/div/div/div/div
-    Should be Equal    ${Status}    Active
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
-    Page Should not Contain    Inactive
+#Query all Active User
+#    Open Broser and Login automatically
+#    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+#    Click Menu Tree
+#    Open System Management submenu
+#    Click User Management in submenu
+#    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/h3/a    2
+#    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[3]/div/div[2]/div/div/div/div
+#    Wait Until Element is Visible    Xpath=/html/body/div[2]/div/div/div/ul/li[2]
+#    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
+#    Sleep    1
+#    ${Status}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[3]/div/div[2]/div/div/div/div
+#    Should be Equal    ${Status}    Active
+#    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/button
+#    Page Should not Contain    Inactive
 
 Query all InActive User
     Open Broser and Login automatically
@@ -430,102 +499,102 @@ Check User Management View Function
     Should be empty    ${user_Password}
     Should be Equal    ${User_E-mail}    aa@aa.com
     #System Management Check box selected status
-	${grouptitle_SystemManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[1]/td[1]/span
+	${grouptitle_SystemManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[1]/td[1]/span
     should be equal    ${grouptitle_SystemManagement}    System Management
-	${permission_title_UserManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[1]/span
+	${permission_title_UserManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[1]/span
 	should be equal    ${permission_title_UserManagement}    User Management
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
-	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[2]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
-	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[3]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
-	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[2]/td[4]/label/span/input
-	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[1]/span
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
+	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
+	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[1]/span
 	should be equal    ${permission_title_PartnerManagement}    Partner Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[3]/td[4]/label/span/input
-    ${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[1]/span
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
+    ${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[1]/span
 	should be equal    ${permission_title_GameManagement}    Game Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[4]/td[4]/label/span/input
-	${permission_title_CurrencyManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[1]/span
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
+	${permission_title_CurrencyManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[1]/span
 	should be equal    ${permission_title_CurrencyManagement}    Currency Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[4]/label/span/input
-	${permission_title_ConfirmationHistory}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[5]/td[1]/span
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[4]/label/span/input
+	${permission_title_ConfirmationHistory}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[5]/td[1]/span
 	should be equal    ${permission_title_ConfirmationHistory}    Currency Management
-    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[2]/label/span/input    
-	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input
-	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[3]/label/span/input	
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[2]/label/span/input    
+	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[3]/label/span/input
+	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[3]/label/span/input	
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     #Partner Management Check box selected status
-	${grouptitle_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[7]/td[1]/span
+	${grouptitle_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[7]/td[1]/span
     should be equal    ${grouptitle_PartnerManagement}    Partner Management
-	${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[1]/span
+	${permission_title_GameManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[1]/span
 	should be equal    ${permission_title_GameManagement}    Game Management	
-	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[2]/label/span/input
-	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[2]/label/span/input
-	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[3]/label/span/input
-	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[3]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
-	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[8]/td[4]/label/span/input
-	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[1]/span
+	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[2]/label/span/input
+	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[2]/label/span/input
+	Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[3]/label/span/input
+	Element Should be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[3]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
+	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[8]/td[4]/label/span/input
+	${permission_title_PartnerManagement}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[1]/span
 	should be equal    ${permission_title_PartnerManagement}    Player Management
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[2]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[2]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[9]/td[4]/label/span/input
     #Report Check box selected status
-	${grouptitle_Report}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[10]/td[1]/span
+	${grouptitle_Report}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[10]/td[1]/span
     should be equal    ${grouptitle_Report}    Report
-	${permission_title_GameIncome}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[1]/span
+	${permission_title_GameIncome}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[1]/span
 	should be equal    ${permission_title_GameIncome}    Game Income
-	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[2]/label/span/input
-	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[2]/label/span/input
-	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[3]/label/span/input
-	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[3]/label/span/input
-	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
-	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[11]/td[4]/label/span/input
-	${permission_title_Game ComparisonAcrossPartner}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[1]/span
+	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[2]/label/span/input
+	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[2]/label/span/input
+	Checkbox should not be selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[3]/label/span/input
+	Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[3]/label/span/input
+	Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
+	Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[11]/td[4]/label/span/input
+	${permission_title_Game ComparisonAcrossPartner}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[1]/span
 	should be equal    ${permission_title_GameComparisonAcrossPartner}    Game Comparison Across Partner
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[2]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[2]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[3]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[12]/td[4]/label/span/input
-    ${permission_title_TOP100}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[1]/span
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[2]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[3]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[12]/td[4]/label/span/input
+    ${permission_title_TOP100}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[1]/span
 	should be equal    ${permission_title_Top100}    TOP 100 Players Across Platform
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[2]/label/span/input
-    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[2]/label/span/input
-    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[3]/label/span/input
-    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[13]/td[4]/label/span/input
-	${permission_title_Player Transaction History}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[1]/span
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[2]/label/span/input
+    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[2]/label/span/input
+    Checkbox Should Not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[3]/label/span/input
+    Element should be disabled   xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[13]/td[4]/label/span/input
+	${permission_title_Player Transaction History}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[1]/span
 	should be equal    ${permission_title_PlayerTransactionHistory}    Player Transaction History
-    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[2]/label/span/input
-    Element Should Be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[2]/label/span/input
-    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[3]/label/span/input
-    Element Should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[3]/label/span/input
-    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
-    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[2]/label/span/input
+    Element Should Be Disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[2]/label/span/input
+    Checkbox Should not Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[3]/label/span/input
+    Element Should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[3]/label/span/input
+    Checkbox Should Be Selected    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
+    Element should be disabled    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[14]/td[4]/label/span/input
 
 Click Cancel Button
     Open Broser and Login automatically

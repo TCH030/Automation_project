@@ -6,7 +6,7 @@ Click Create New Button
     Sleep    1
 
 Click Edit Link
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[11]/span/a[1]
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[11]/span/a[1]
     Sleep    1
 
 Rest Player Status

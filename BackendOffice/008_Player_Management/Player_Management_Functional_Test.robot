@@ -59,6 +59,7 @@ Check Player Status Option is Showed
     Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div/div/div
+	Sleep    0.5
     ${Player_status_Active}    Get Text    xpath=html/body/div[2]/div/div/div/ul/li[1]
     Should Be Equal    ${Player_status_Active}    Active
     ${Player_status_InActive}    Get Text    xpath=html/body/div[2]/div/div/div/ul/li[2]
@@ -72,6 +73,7 @@ Check Curreny Option is Showed
     Click Player Management in submenu
     Click Create New Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/div/div/div
+	Sleep    0.5
     ${Player_Currency_CNY}    Get Text    xpath=/html/body/div[2]/div/div/div/ul/li[1]
     ${Player_Currency_VND}    Get Text    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     ${Player_Currency_USD}    Get Text    xpath=/html/body/div[2]/div/div/div/ul/li[3]
@@ -103,6 +105,7 @@ Check Wallet Type Auto Switch by Partner
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
     Sleep    1
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
+	Sleep    0.5
     ${Wallet_TYPE_Transfer}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[6]/div/div/div[2]/div/div/div/div/div
     Should be Equal    ${Wallet_TYPE_Transfer}    TRANSFER
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div/div/div
@@ -110,7 +113,7 @@ Check Wallet Type Auto Switch by Partner
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[1]
     ${Wallet_TYPE_Seamless}    Get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[6]/div/div/div[2]/div/div/div/div/div
     Sleep    1
-    Should be Equal    ${Wallet_TYPE_Seamless}    Seamless
+    Should be Equal    ${Wallet_TYPE_Seamless}    SEAMLESS
     Should not be Equal    ${Wallet_TYPE_Seamless}    ${Wallet_TYPE_Transfer}
 
 Create New Player
@@ -135,15 +138,22 @@ Create New Player
     Wait until Element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/a    3
     #Query new Player
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${Randon_create_account}
+	click element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[2]/div/div[2]/div/div/div/div
+	Sleep    0.5
+	Click Element    xpath=html/body/div[2]/div/div/div/ul/li[1]
+	Sleep    0.5
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
+	Sleep    0.5
+    Click Element    xpath=/html/body/div[3]/div/div/div/ul/li[2]
     Sleep    1
     Click Search Button
-    ${Player_ID}    GET TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]
+    ${Player_ID}    GET TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]
     Should be Equal    ${Player_ID}    ${Randon_create_account}
+	${Partner_id}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[2]
+	log    ${Partner_id}
     #Delete USER via API Request
     Create Session    BO    http://172.16.50.52:8082
-    ${resp}=    Delete    BO    /api/players/Company/${Randon_create_account}
+    ${resp}=    Delete    BO    /api/players/${Partner_id}/${Randon_create_account}
     Should Be Equal As Strings    ${resp.status_code}    200
 
 Query Player's Info
@@ -154,16 +164,20 @@ Query Player's Info
     Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
-    ${Player_ID}    GET TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]
-    ${Player_type}    Get TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[4]
-    ${Player_wallettype}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[5]
-    ${Player_currency}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[6]
-    ${Player_Balance}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[7]
-    ${Player_DateRegistered}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[9]
+	Sleep    0.5
+	click element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[2]/div/div[2]/div/div/div/div
+	Sleep    0.5
+	Click element    xpath=html/body/div[2]/div/div/div/ul/li[1]
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div    #**
+    Click Element    xpath=/html/body/div[3]/div/div/div/ul/li[2]    #****
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span    #****
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
+    ${Player_ID}    GET TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]
+    ${Player_type}    Get TEXT    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[4]
+    ${Player_wallettype}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[5]
+    ${Player_currency}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[6]
+    ${Player_Balance}    Get TEXT    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[7]
+    ${Player_DateRegistered}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[9]
     Should be Equal    ${Player_ID}    ${testingaccountID_player}
     Should be Equal    ${Player_type}    HOUSE
     Should be Equal    ${Player_wallettype}    TRANSFER
@@ -179,10 +193,15 @@ EDIT Player's Info
     Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[2]/div/div[2]/div/div/div/div
+	wait until element is visible    xpath=/html/body/div[2]/div/div/div/ul/li[1]    10
+	Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[1]
+	Sleep    0.5
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Sleep    0.5
+	Click Element    xpath=/html/body/div[3]/div/div/div/ul/li[2]
+    Click Search Button
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
     Click Edit Link
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span
     ${Player_edit_page_title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/span
@@ -210,10 +229,15 @@ Edit Player Status
     Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[2]/div/div[2]/div/div/div/div
+	wait until element is visible    xpath=/html/body/div[2]/div/div/div/ul/li[1]    10
+	Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[1]
+	Sleep    0.5
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Sleep    0.5
+	Click Element    xpath=/html/body/div[3]/div/div/div/ul/li[2]
+    Click Search Button
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
     Click Edit Link
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div/div/div
@@ -225,15 +249,20 @@ Edit Player Status
     Confirm Action
     Sleep    3
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
-    ${Player_Status}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[2]/div/div[2]/div/div/div/div
+	wait until element is visible    xpath=/html/body/div[2]/div/div/div/ul/li[1]    10
+	Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[1]
+	Sleep    0.5
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Sleep    0.5
+	Click Element    xpath=/html/body/div[3]/div/div/div/ul/li[2]
+    Click Search Button
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
+    ${Player_Status}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[10]/div/button
     Should be Equal    ${Player_Status}    Inactive
-    Click Element    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    Click Element    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[10]/div/button
     Sleep    2
-    Confirm Action
+    Choose OK On Next Confirmation
 
 Adjust Player Balance
     Open Broser and Login automatically
@@ -243,10 +272,15 @@ Adjust Player Balance
     Click Player Management in submenu
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    2
     Input Text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[1]/div/div[2]/div/input    ${testingaccountID_player}
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
+	Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[2]/div/div[2]/div/div/div/div
+	wait until element is visible    xpath=/html/body/div[2]/div/div/div/ul/li[1]    10
+	Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[1]
+	Sleep    0.5
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
+    Sleep    0.5
+	Click Element    xpath=/html/body/div[3]/div/div/div/ul/li[2]
+    Click Search Button
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
     Click Edit Link
     Wait until element is Visible    xpath=html/body/div[1]/div/div/section/div/h3/span
     Input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div[2]/div/input    1.21
@@ -257,8 +291,8 @@ Adjust Player Balance
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
-    ${Player_Balance}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[7]
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
+    ${Player_Balance}    Get Text    Xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[7]
     Should be Equal    ${Player_Balance}    8.30
     Sleep    1
     Reset Balance
@@ -274,19 +308,19 @@ Inactive and Active Player in View Page
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[1]/div/div[4]/div/div[2]/div/div/div/div    #***
     Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[2]
     Click Element    xpath=//*[@id="root"]/div/div/section/div/div[1]/div/form/div[2]/div/div/button/span    #***
-    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[1]    5
-    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button    #***
+    Wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[1]    5
+    Click Element    xpath=//*[@id="root"]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[10]/div/button    #***
     sleep    1
     Confirm Action
     Sleep    3
-    ${Player_status_deactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    ${Player_status_deactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[10]/div/button
     Should BE Equal    ${Player_status_deactive}    Inactive
     Sleep    1
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[10]/div/button
     Sleep    1
     Confirm Action
     Sleep    3
-    ${Player_status_Reactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/table/tbody/tr/td[10]/div/button
+    ${Player_status_Reactive}    Get Text    xpath=html/body/div[1]/div/div/section/div/div[2]/div/div/div/table/tbody/tr/td[10]/div/button
     Should BE Equal    ${Player_status_Reactive}    Active
 
 Click Cancel Button

@@ -156,10 +156,10 @@ Download File checking-Default
     Click Search button
     Sleep    5
     Click Export button
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ All Games.csv
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ All Games.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ All Games.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ All Games.csv
 
 Download File checking-Partner_Selected
     Open Broser and Login automatically
@@ -175,10 +175,10 @@ Download File checking-Partner_Selected
     Click Search button
     Sleep    5
     Click Export button
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ BBIN Staging, Game_ All Games.csv
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ BBIN Staging, Game_ All Games.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ BBIN Staging, Game_ All Games.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ BBIN Staging, Game_ All Games.csv
 
 Download File checking-Game_Selected
     Open Broser and Login automatically
@@ -187,17 +187,32 @@ Download File checking-Game_Selected
     Click Report submenu
     Click Game income in submenu
     Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+	sleep    1
+	Input Text    xpath=/html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
+    Sleep    1
+	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]
+	Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
+	sleep    1
+	Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
+	Sleep    1
+	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]
+	Sleep    3
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[2]/div/div[2]/div/div/div/div
-    Wait until element is Visible    xpath=html/body/div[2]/div/div/div/ul/li[2]    5
-    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
+    Sleep    3
+	Wait until element is Visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
+    Click Element    xpath=html/body/div[4]/div/div/div/ul/li[2]
     Sleep    1
     Click Search button
-    Sleep    5
+    Sleep    2
+	Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div[1]/a/button    5
     Click Export button
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- Bloodlines.csv
+	Sleep    2
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv    
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv    
 
 Download File checking-View_Selected
     Open Broser and Login automatically
@@ -214,10 +229,10 @@ Download File checking-View_Selected
     Sleep    5
     Click Export button
     Sleep    5
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv    10
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner- All partners, Currency- All Currency.csv    10
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by CURRENCY - Partner_ All partners, Currency_ All Currency.csv    10
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by CURRENCY - Partner_ All partners, Currency_ All Currency.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income View by CURRENCY - Partner_ All partners, Currency_ All Currency.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by CURRENCY - Partner_ All partners, Currency_ All Currency.csv    10
 
 Download File checking-GAME/Partner_Selected
     Open Broser and Login automatically
@@ -225,25 +240,36 @@ Download File checking-GAME/Partner_Selected
     Click Menu Tree
     Click Report submenu
     Click Game income in submenu
+	Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+	sleep    1
+	Input Text    xpath=/html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
+    Sleep    1
+	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]
+	Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
+	sleep    1
+	Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
+	Sleep    1
+	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[2]/div/div[2]/div/div/div/div
+    Sleep    3
+	Wait until element is Visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
+	Click Element    xpath=html/body/div[4]/div/div/div/ul/li[2]
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div[1]/div/div[2]/div/div/div/div
     Sleep    1
-    Wait until element is Visible    xpath=html/body/div[2]/div/div/div/ul/li[2]    5
-    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[2]
-    Sleep    1
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[2]/div/div[2]/div/div/div/div
-    Sleep    1
-    Wait until element is Visible    xpath=html/body/div[3]/div/div/div/ul/li[2]    5
-    Click Element    xpath=html/body/div[3]/div/div/div/ul/li[2]
+    Wait until element is Visible    xpath=html/body/div[5]/div/div/div/ul/li[2]    5
+    Click Element    xpath=html/body/div[5]/div/div/div/ul/li[2]
     Sleep    1
     Click Search button
     Sleep    5
     Click Export button
     Sleep    5
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv    10
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by GAME - Partner- BBIN Staging, Game- Bloodlines.csv    10
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ BBIN Staging, Game_ Bloodlines.csv    10
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ BBIN Staging, Game_ Bloodlines.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner GAME - Partner_ BBIN Staging, Game_ Bloodlines.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner GAME - Partner_ BBIN Staging, Game_ Bloodlines.csv    10
 
 Download File checking-GAME/View_Selected
     Open Broser and Login automatically
@@ -263,17 +289,18 @@ Download File checking-GAME/View_Selected
     Click Element    xpath=html/body/div[3]/div/div/div/ul/li[4]
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[5]/div/div[2]/div/div/div/div
-    wait until element is visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
+    Sleep    3
+	wait until element is visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
     Click element    xpath=html/body/div[4]/div/div/div/ul/li[2]
     Sleep    1
     Click Search button
     Sleep    5
     Click Export button
     Sleep    5
-    Wait Until Created    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv    10
-    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv
-    Remove file    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv
-    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by DEVICE - Partner- BBIN Staging, Device- desktop.csv    10
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by DEVICE - Partner_ BBIN Staging, Device_ desktop.csv    10
+    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by DEVICE - Partner_ BBIN Staging, Device_ desktop.csv
+    Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income View by DEVICE - Partner_ BBIN Staging, Device_ desktop.csv
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by DEVICE - Partner_ BBIN Staging, Device_ desktop.csv    10
 
 Incorrect Date format
     Open Broser and Login automatically
@@ -328,9 +355,9 @@ End time value is early then Start time
     should be equal    ${Error_enddate}    End Date can not be before Start Date
     should be equal    ${error_endtime}    End Date can not be before Start Date
     #Get File Test
-    #    File Should Exist    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
-    #    ${GETFILE}    get file    C:\\Users\\tsaic30\\Downloads\\npp-robot-master.zip
+    #    File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
+    #    ${GETFILE}    get file    C:\\Users\\${Accountname}\\Downloads\\npp-robot-master.zip
     #    log    ${GETFILE}
-    #    Remove File    C:\\Users\\tsaic30\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
-    #    Wait Until Removed    C:\\Users\\tsaic30\\Downloads\\Test.txt
-    #    Game Income by Partner View by GAME - Partner- BBIN Staging, Game- All Games.csv
+    #    Remove File    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by CURRENCY - Partner_ BBIN Staging, Currency_ CNY.csv
+    #    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Test.txt
+    #    Game Income by Partner View by GAME - Partner_ BBIN Staging, Game_ All Games.csv
