@@ -1,5 +1,5 @@
 *** Settings ***
-Test Teardown     Close ALL Browsers
+Test Teardown     Close All Browsers
 Resource          ../Login.robot
 Resource          ./xpath_resource.robot    # using resource to store xpath and all other Variables
 
