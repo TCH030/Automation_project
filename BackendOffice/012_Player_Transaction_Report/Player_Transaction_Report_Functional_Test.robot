@@ -1,5 +1,5 @@
 *** Settings ***
-Test Teardown     Close Browser
+Test Teardown     Close ALL Browsers
 Resource          ../Login.robot
 Resource          xpath_resource.robot    # using resource to store xpath and all other Variables
 
@@ -11,6 +11,7 @@ Switch Time Zone
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Click Report submenu
+    Sleep    1
     Click Player Transaction History in submenu
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[1]/div/div/div/span[1]/div[1]
@@ -101,51 +102,54 @@ Check calander after set time range to Today
     ${get_value_end}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/div[3]/div[3]/div/div/div/span[1]/div[1]/span
     should be equal    ${today}    ${get_value_end}
 
-*** keyword ***
 Check calander after set time range to Yesterday
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Transaction Report Link
+    Click Report submenu
+    Click Player Transaction History in submenu
     Sleep    1
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/div[2]/div/div/div/div
-    Wait Until element is Visible    xpath=/html/body/div[2]/div/div/div/ul/li[2]    2
-    Sleep    1
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[3]
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div/div[1]/span[1]/div[1]
+    Wait Until element is Visible    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]    2
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]
     sleep    1
     ${today}    Get Current Date    result_format=%Y-%m-%d
     ${Yesterday_start}    Subtract Time From Date    ${today}    1    result_format=%Y-%m-%d
-    ${get_value_Yesterday}    Get Value    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+    ${get_value_Yesterday}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/div[3]/div[1]/div/div/div/span[1]/div[1]
     should be equal    ${Yesterday_start}    ${get_value_Yesterday}
     ${Yesterday_end}    Subtract Time From Date    ${today}    1    result_format=%Y-%m-%d
-    ${get_value_Yesterday}    Get Value    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
+    ${get_value_Yesterday}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/div[3]/div[3]/div/div/div/span[1]/div[1]
     should be equal    ${Yesterday_end}    ${get_value_Yesterday}
 
-Check calander after set time range to Last 7 days
+Check calander after set time range to 7-days before
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Transaction Report Link
+    Click Report submenu
+    Click Player Transaction History in submenu
     Sleep    1
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[2]/div/div/div[2]/div/div/div/div
-    Wait Until element is Visible    xpath=/html/body/div[2]/div/div/div/ul/li[2]    2
-    Click Element    xpath=/html/body/div[2]/div/div/div/ul/li[4]
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div/div[1]/span[1]/div[1]
+    Wait Until element is Visible    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]    2
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[3]
+    sleep    1
     ${today}    Get Current Date    result_format=%Y-%m-%d
     ${Last7Days_start}    Subtract Time From Date    ${today}    7 days    result_format=%Y-%m-%d
     log    ${today}
     log    ${Last7Days_start}
-    ${get_value_Last7Days_start}    Get Value    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+    ${get_value_Last7Days_start}    Get text    xpath=html/body/div[1]/div/div/section/div/div/div/div[3]/div[1]/div/div/div/span[1]/div[1]
     should be equal    ${Last7Days_start}    ${get_value_Last7Days_start}
-    ${get_value_Last7Days_end}    Get Value    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
+    ${get_value_Last7Days_end}    Get text    xpath=html/body/div[1]/div/div/section/div/div/div/div[3]/div[3]/div/div/div/span[1]/div[1]
     should be equal    ${today}    ${get_value_Last7Days_end}
 
 Download File checking-Default
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
-    Click Player Transaction Report Link
+    Click Report submenu
+    Click Player Transaction History in submenu
     Sleep    1
-    Click Search button
+    Input text    xpath=html/body/div[1]/div/div/section/div/div/div/div[1]/div[1]/div/input    someuser00001
+    Click Search by Date button
     Sleep    5
     Click Export button
     Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
@@ -153,6 +157,7 @@ Download File checking-Default
     Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
     Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income by Partner View by GAME - Partner- All partners, Game- All Games.csv
 
+*** keyword ***
 Download File checking-Partner_Selected
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2

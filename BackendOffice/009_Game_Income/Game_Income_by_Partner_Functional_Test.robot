@@ -1,5 +1,5 @@
 *** Settings ***
-Test Teardown     Close Browser
+Test Teardown     Close ALL Browsers
 Resource          ../Login.robot
 Resource          xpath_resource.robot    # using resource to store xpath and all other Variables
 
@@ -188,31 +188,31 @@ Download File checking-Game_Selected
     Click Game income in submenu
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
-	sleep    1
-	Input Text    xpath=/html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
+    sleep    1
+    Input Text    xpath=/html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
     Sleep    1
-	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]
-	Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]
+    Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
-	sleep    1
-	Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
-	Sleep    1
-	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]
-	Sleep    3
+    sleep    1
+    Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
+    Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]
+    Sleep    3
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[2]/div/div[2]/div/div/div/div
     Sleep    3
-	Wait until element is Visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
+    Wait until element is Visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
     Click Element    xpath=html/body/div[4]/div/div/div/ul/li[2]
     Sleep    1
     Click Search button
     Sleep    2
-	Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div[1]/a/button    5
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/div[2]/div[1]/a/button    5
     Click Export button
-	Sleep    2
-    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv    
+    Sleep    2
+    Wait Until Created    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv
     File Should Exist    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv
     Remove file    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv
-    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv    
+    Wait Until Removed    C:\\Users\\${Accountname}\\Downloads\\Game Income View by GAME - Partner_ All partners, Game_ Bloodlines.csv
 
 Download File checking-View_Selected
     Open Broser and Login automatically
@@ -240,22 +240,22 @@ Download File checking-GAME/Partner_Selected
     Click Menu Tree
     Click Report submenu
     Click Game income in submenu
-	Sleep    1
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
-	sleep    1
-	Input Text    xpath=/html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
     Sleep    1
-	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]
-	Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+    sleep    1
+    Input Text    xpath=/html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
+    Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]
+    Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
-	sleep    1
-	Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
-	Sleep    1
-	Click Element     xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]
+    sleep    1
+    Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
+    Sleep    1
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[2]/div/div[2]/div/div/div/div
     Sleep    3
-	Wait until element is Visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
-	Click Element    xpath=html/body/div[4]/div/div/div/ul/li[2]
+    Wait until element is Visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
+    Click Element    xpath=html/body/div[4]/div/div/div/ul/li[2]
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div[1]/div/div[2]/div/div/div/div
     Sleep    1
@@ -290,7 +290,7 @@ Download File checking-GAME/View_Selected
     Sleep    1
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div[5]/div/div[2]/div/div/div/div
     Sleep    3
-	wait until element is visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
+    wait until element is visible    xpath=html/body/div[4]/div/div/div/ul/li[2]    5
     Click element    xpath=html/body/div[4]/div/div/div/ul/li[2]
     Sleep    1
     Click Search button

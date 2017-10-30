@@ -1,5 +1,5 @@
 *** Settings ***
-Test Teardown     Close Browser
+Test Teardown     Close ALL Browsers
 Resource          ../Login.robot
 Resource          ./xpath_resource.robot    # using resource to store xpath and all other Variables
 Resource          ../Resource.robot
@@ -754,7 +754,7 @@ Disable Currency History view permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[6]/td[4]/label/span/input
     sleep    1
     Click Edit Button
-	Sleep    1
+    Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1

@@ -9,3 +9,4 @@ Click Create New Button
 
 Click Create Button
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Sleep    2

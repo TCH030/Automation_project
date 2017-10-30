@@ -1,5 +1,5 @@
 *** Settings ***
-Test Teardown     Close Browser
+Test Teardown     Close ALL Browsers
 Resource          ../Login.robot
 Resource          xpath_resource.robot    # using resource to store xpath and all other Variables
 
@@ -129,7 +129,7 @@ Check select one game
     Click Element    xpath=html/body/div[2]/div/div/div/ul/li[1]
     Sleep    1
     Double Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]
-	Sleep    1
+    Sleep    1
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div/div/div[2]/div/div/div/div    Bloodlines
 
 Check select All games
@@ -153,6 +153,7 @@ Check select All games
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div/div/div[2]/div/div/div/div    BL_M4_V2_RECORDER
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div/div/div[2]/div/div/div/div    M4-0041;V:1
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div/div/div[2]/div/div/div/div    Journey To The West
+
 Check select one Parnter
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
@@ -164,8 +165,9 @@ Check select one Parnter
     Click Element    xpath=html/body/div[2]/div/div/div/ul/li[1]
     Sleep    1
     Double Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]
-	Sleep    1
+    Sleep    1
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div/div/div[2]/div/div/div/div    BBIN Staging
+
 Check select All Parnters
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
@@ -179,7 +181,7 @@ Check select All Parnters
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div/div/div[2]/div/div/div/div    GPK Staging
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div/div/div[2]/div/div/div/div    GT Staging test
     Element Should Contain    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div/div/div[2]/div/div/div/div    GT Staging
-    
+
 Download File checking All GAME/Partner Selected
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
@@ -208,12 +210,12 @@ Download File checking-Partner_Selected
     Sleep    1
     Select checkbox    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div/div/div[2]/div/label/span[1]/input
     Sleep    1
-    Click element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div/div/div[2]/div/div/div/div                       
-	Sleep    1
+    Click element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[2]/div/div/div[2]/div/div/div/div
+    Sleep    1
     Click Element    xpath=html/body/div[2]/div/div/div/ul/li[1]
     Sleep    1
     Double Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]
-	Sleep    1
+    Sleep    1
     Click Search button
     Sleep    5
     Click Export button
@@ -228,21 +230,21 @@ Download File checking-Game_Selected
     Click Menu Tree
     Click Report submenu
     Click Game Comparison Across Partner in submenu
-	Click Element  xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
     Sleep    0.5
-	Input Text    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
-	Sleep    0.5
-	Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]
-	Sleep    0.5
-	Click Element  xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
+    Input Text    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input    2017-09-01
     Sleep    0.5
-	Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input   2017-09-30
-	Sleep    0.5	
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]
+    Sleep    0.5
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/span/span/input
+    Sleep    0.5
+    Input Text    xpath=html/body/div[3]/div/div/div/div/div[1]/div/input    2017-09-30
+    Sleep    0.5
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]
     Sleep    1
     Click element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[5]/div[1]/div/div/div[2]/div/div/div/div
     Sleep    0.5
-	Click Element    xpath=html/body/div[4]/div/div/div/ul/li[1]
+    Click Element    xpath=html/body/div[4]/div/div/div/ul/li[1]
     Sleep    1
     Double Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]
     Sleep    1
@@ -263,9 +265,9 @@ Incorrect Date format
     Click Report submenu
     Click Game Comparison Across Partner in submenu
     Sleep    1
-	Click Element  xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
     Sleep    0.5
-	Input Text    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input    2017/05/01
+    Input Text    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input    2017/05/01
     Click Search button
     Wait until element is not visible    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input
     ${today}    Get Current Date    result_format=%Y-%m-%d
@@ -282,7 +284,7 @@ End date value is early then Start date
     Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[3]/div[1]/div/div[2]/div/span/span/input
     wait until element is visible    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input    5
     Input Text    xpath=html/body/div[2]/div/div/div/div/div[1]/div/input    2100-11-01
-    Double Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]   
+    Double Click Element    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[1]
     Click Search button
     wait until element is visible    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/div    5
     ${Error_enddate}    get text    xpath=html/body/div[1]/div/div/section/div/div[1]/div/form/div[4]/div[1]/div/div[2]/div/div

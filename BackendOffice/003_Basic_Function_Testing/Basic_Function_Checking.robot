@@ -1,5 +1,5 @@
 *** Settings ***
-Test Teardown     Close Browser
+Test Teardown     Close ALL Browsers
 Resource          ../Login.robot
 Resource          ./xpath_resource.robot    # using resource to store xpath and all other Variables
 
@@ -16,7 +16,6 @@ Check Game Management Page
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
     Should Be Equal    ${Get_Page_Title}    Game Management
 
-
 Check Game Management (Page Partner)
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
@@ -24,7 +23,6 @@ Check Game Management (Page Partner)
     Click Partner Management submenu
     Click Game Management in submenu (Partner)
     Page Should Contain    Game Management    3
-
 
 Check Currency Page
     Open Broser and Login automatically
