@@ -76,7 +76,7 @@ Rest Status
     Choose OK On Next Confirmation
 	#Confirm Action
 Rest All Permission
-        Open Broser and Login automatically
+    Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
     Click Menu Tree
     Open System Management submenu

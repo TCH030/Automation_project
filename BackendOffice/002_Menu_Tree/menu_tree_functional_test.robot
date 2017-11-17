@@ -23,7 +23,7 @@ Open/Close System Management submenu
     Element should not be Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/ul/li[3]/div/a
     Element should not be Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/ul/li[4]/div/a
 
-Open/Close Partner Management submenu
+Open/Close Platform Management submenu
     Open Broser and Login automatically
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    5
     Wait Until element is Visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[2]/a    1

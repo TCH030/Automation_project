@@ -15,6 +15,7 @@ Create Partner with Empty Code
     Click Create New Button
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    Test
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Sleep    0.5
     ${Empty_error_message}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/div
     Should be Equal    ${Empty_error_message}    This field is required
 
@@ -27,11 +28,26 @@ Create Partner with Empty Parent Name
     Click Create New Button
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    testing
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Sleep    0.5
     ${Empty_error_message}    Get Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div
     Should be Equal    ${Empty_error_message}    This field is required
 
+Create New partner with dup partner code
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+    Click Partner Management in submenu
+    Click Create New Button
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    123321
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    123321
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Sleep    1
+    ${error_message}    Confirm Action
+    Should be Equal    ${error_message}    Create Partner Error
+
 Create New Partner
-    ${RandonNumber}=    Generate Random String    17    [LETTERS]
+    ${RandonNumber}=    Generate Random String    10    [LETTERS]
     ${Randon_create_Parnter}=    set variable    QAPartner${RandonNumber}
     log    ${Randon_create_Parnter}
     ${RandonPartnerName}=    Generate Random String    5    [LETTERS]
@@ -45,13 +61,11 @@ Create New Partner
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    ${Randon_create_Parnter}
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    ${RandonPartnerName}
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Sleep    1
     Choose OK On Next Confirmation
-    Confirm Action
-    #Sleep    1
-    #Page should contain    ${RandonPartnerName}
     Sleep    1
     #Delete USER via API Request
-    Create Session    BO    http://172.16.50.52:8086
+    Create Session    BO    http://${APIserverIP}:8086
     ${resp}=    Delete    BO    /api/partners/${Randon_create_Parnter}
     Should Be Equal As Strings    ${resp.status_code}    200
 
@@ -70,10 +84,9 @@ Create New Partner with partner code over 25 characters
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    ${Randon_create_Parnter}
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    ${RandonPartnerName}
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
-    Choose OK On Next Confirmation
-    Confirm Action
+    Sleep    0.5
     ${Partnercode_error}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/div
-    should be equal    ${Partnercode_error}    cannot be more then 25 characters
+    should be equal    ${Partnercode_error}    not more than 25 characters
 
 Create New Partner wit partner name over 25 characters
     ${RandonNumber}=    Generate Random String    17    [LETTERS]
@@ -90,10 +103,9 @@ Create New Partner wit partner name over 25 characters
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    ${Randon_create_Parnter}
     Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    ${RandonPartnerName}
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
-    #    Choose OK On Next Confirmation
-    #    Confirm Action
+    Sleep    0.5
     ${Partnercode_error}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/div
-    should be equal    ${Partnercode_error}    cannot be more then 25 characters
+    should be equal    ${Partnercode_error}    not more than 25 characters
 
 Click Cancel Button
     Open Broser and Login automatically
@@ -114,9 +126,18 @@ Auto Refill Token UID After Clear
     Open System Management submenu
     Click Partner Management in submenu
     Click Create New Button
-    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    testing
-    ${Empty_Token_UID_Before}    Get Value    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/input    vincenttest
+    Sleep    0.5
     Clear Element Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input
-    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input
-    ${Empty_Token_UID_After}    Get Value    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input
-    Should be Equal    ${Empty_Token_UID_Before}    ${Empty_Token_UID_After}
+#	Sleep    2
+#   Click element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input
+    #Sleep    2
+    #Press combination    KEY.CTRL    A
+#    Sleep    0.5
+#    press key    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input    \\08
+    input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    vincenttest
+    Sleep    2
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
+    Sleep    0.5
+    ${error_message}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div
+    should be equal    ${error_message}    This field is required, Invalid format

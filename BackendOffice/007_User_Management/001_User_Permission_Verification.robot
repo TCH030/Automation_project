@@ -7,9 +7,12 @@ Resource          ../Resource.robot
 *** Variables ***
 
 *** Test Cases ***
+Test account preparation
+    Rest All Permission
+	
 Disable User Management view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -23,6 +26,7 @@ Disable User Management view permission
     Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    2
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
@@ -32,8 +36,9 @@ Disable User Management view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+    #${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+    #Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -45,7 +50,7 @@ Disable User Management view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -62,13 +67,14 @@ Disable User Management view permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
 
 Disable User Management Create permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -82,6 +88,7 @@ Disable User Management Create permission
     Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
@@ -91,8 +98,9 @@ Disable User Management Create permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+	#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -104,7 +112,7 @@ Disable User Management Create permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -119,13 +127,14 @@ Disable User Management Create permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
 
 Disable User Management EDIT permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -139,6 +148,7 @@ Disable User Management EDIT permission
     Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
@@ -148,8 +158,9 @@ Disable User Management EDIT permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -161,7 +172,7 @@ Disable User Management EDIT permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -176,13 +187,14 @@ Disable User Management EDIT permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
 
 Disable Partner Management view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -196,6 +208,7 @@ Disable Partner Management view permission
     Unselect Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[4]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
@@ -205,8 +218,9 @@ Disable Partner Management view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -218,7 +232,7 @@ Disable Partner Management view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -241,7 +255,7 @@ Disable Partner Management view permission
 
 Disable Partner Management Create permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -264,8 +278,9 @@ Disable Partner Management Create permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -277,7 +292,7 @@ Disable Partner Management Create permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -292,13 +307,14 @@ Disable Partner Management Create permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[2]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
 
 Disable Partner Management Edit permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -321,8 +337,9 @@ Disable Partner Management Edit permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -334,7 +351,7 @@ Disable Partner Management Edit permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -349,13 +366,14 @@ Disable Partner Management Edit permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[3]/td[3]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
 
 Disable Game Management view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -378,8 +396,9 @@ Disable Game Management view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha	
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -391,7 +410,7 @@ Disable Game Management view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -408,13 +427,14 @@ Disable Game Management view permission
     Select Checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[4]/td[4]/label/span/input
     sleep    1
     Click Edit Button
+	Sleep    1
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
 
 Disable Game Management Create permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -437,8 +457,9 @@ Disable Game Management Create permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -450,7 +471,7 @@ Disable Game Management Create permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -471,7 +492,7 @@ Disable Game Management Create permission
 
 Disable Game Management Edit permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -494,8 +515,9 @@ Disable Game Management Edit permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -507,7 +529,7 @@ Disable Game Management Edit permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -528,7 +550,7 @@ Disable Game Management Edit permission
 
 Disable Currency Management view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -551,8 +573,9 @@ Disable Currency Management view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -564,7 +587,7 @@ Disable Currency Management view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -587,7 +610,7 @@ Disable Currency Management view permission
 
 Disable Currency Management Create permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -610,8 +633,9 @@ Disable Currency Management Create permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -623,7 +647,7 @@ Disable Currency Management Create permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -644,7 +668,7 @@ Disable Currency Management Create permission
 
 Disable Currency Management Edit permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -667,8 +691,9 @@ Disable Currency Management Edit permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -680,7 +705,7 @@ Disable Currency Management Edit permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -701,7 +726,7 @@ Disable Currency Management Edit permission
 
 Disable Currency History view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -724,8 +749,9 @@ Disable Currency History view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -737,7 +763,7 @@ Disable Currency History view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -761,7 +787,7 @@ Disable Currency History view permission
 
 Disable Game Management (Partner) view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -784,8 +810,9 @@ Disable Game Management (Partner) view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -796,7 +823,7 @@ Disable Game Management (Partner) view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -819,7 +846,7 @@ Disable Game Management (Partner) view permission
 
 Disable Player Management view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -842,8 +869,9 @@ Disable Player Management view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -854,7 +882,7 @@ Disable Player Management view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -877,7 +905,7 @@ Disable Player Management view permission
 
 Disable Create Player permission in Partner Management
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -900,8 +928,9 @@ Disable Create Player permission in Partner Management
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -913,7 +942,7 @@ Disable Create Player permission in Partner Management
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -933,7 +962,7 @@ Disable Create Player permission in Partner Management
 
 Disable Edit Player permission in Partner Management
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -956,8 +985,9 @@ Disable Edit Player permission in Partner Management
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -976,7 +1006,7 @@ Disable Edit Player permission in Partner Management
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -996,7 +1026,7 @@ Disable Edit Player permission in Partner Management
 
 Disable Game Income view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1019,8 +1049,9 @@ Disable Game Income view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -1031,7 +1062,7 @@ Disable Game Income view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1052,7 +1083,7 @@ Disable Game Income view permission
 
 Disable Game Comparison Across Partner view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1075,8 +1106,9 @@ Disable Game Comparison Across Partner view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -1087,7 +1119,7 @@ Disable Game Comparison Across Partner view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1108,7 +1140,7 @@ Disable Game Comparison Across Partner view permission
 
 Disable TOP 100 Players Across Platform view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1131,8 +1163,9 @@ Disable TOP 100 Players Across Platform view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -1143,7 +1176,7 @@ Disable TOP 100 Players Across Platform view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1164,7 +1197,7 @@ Disable TOP 100 Players Across Platform view permission
 
 DisablePlayer Transaction History view permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1187,8 +1220,9 @@ DisablePlayer Transaction History view permission
     Maximize Browser Window
     Input Text    userName    ${testingaccountID_user}
     Input Text    password    ${testingpwd_user}
-    ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
     Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
     Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
     Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
@@ -1199,7 +1233,7 @@ DisablePlayer Transaction History view permission
     Close Browser
     #Reset Permission
     Open Broser and Login automatically
-    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Sleep    2
     Click Menu Tree
     Open System Management submenu
     Click User Management in submenu
@@ -1217,6 +1251,56 @@ DisablePlayer Transaction History view permission
     Choose OK On Next Confirmation
     Confirm Action    # Chooses Cancel At this time
     Sleep    1
-
+No Permission been assign for userName
+    ${RandonNumber}=    Generate Random String    3    [NUMBERS]
+    ${Randon_create_account}=    set variable    qatesting${RandonNumber}
+    log    ${Randon_create_account}
+    ${RandonPwd}=    Generate Random String    6    [NUMBERS]
+    log    ${RandonPwd}
+    Open Broser and Login automatically
+    Wait Until Element is Visible    xpath=html/body/div[1]/div/div/header/nav/div[2]/ul[1]/li/span/a[1]/em    2
+    Click Menu Tree
+    Open System Management submenu
+    Click User Management in submenu
+    Click Create New Button
+    Sleep    2
+    Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[1]/div/div/div[2]/div/div/div/div
+    Sleep    1
+    Click Element    xpath=html/body/div[2]/div/div/div/ul/li[15]
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/input    ${Randon_create_account}
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    ${RandonPwd}
+    Input Text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[5]/div/div/div[2]/div/input    ${RandonPwd}
+    Sleep    1
+#    Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[2]/label/span/input
+#    Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[3]/label/span/input
+#    Select checkbox    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[7]/div/div/div/table/tbody/tr[2]/td[4]/label/span/input
+    Click Create Button
+    Sleep    1
+    #    Choose OK On Next Confirmation
+    Confirm Action
+    Close All Browsers
+    Sleep    2
+    Open Browser    ${SERVER}    ${BROWSER}    0
+    Maximize Browser Window
+    Input Text    userName    ${Randon_create_account}
+    Input Text    password    ${RandonPwd}
+    Input captcha
+#        ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
+#    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    Wait Until Element Is Visible    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button    2
+    Click Element    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/button
+    Wait until element is visible    xpath=html/body/div[1]/div/div/header/nav/div[1]/a/div/img    5
+    Click Menu Tree
+ 	Sleep    0.5
+	Element should not be visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[1]/a
+	Sleep    0.5
+	Element should not be visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[2]/a
+	Sleep    0.5
+	Element should not be visible    xpath=html/body/div[1]/div/div/aside/div/nav/ul/li[3]/a
+	Sleep    0.5
+    #Delete USER via API Request
+    Create Session    BO    http://172.16.50.52:8082
+    ${resp}=    Delete    BO    /api/accounts/${Randon_create_account}
+    Should Be Equal As Strings    ${resp.status_code}    200
 Permission Reset
     Rest All Permission

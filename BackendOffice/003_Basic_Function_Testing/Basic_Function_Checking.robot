@@ -13,6 +13,7 @@ Check Game Management Page
     Open System Management submenu
     Click Game Management in submenu
     Click Element    xpath=html/body/div[1]/div/div/section/div/h3/a
+	Sleep    1
     ${Get_Page_Title}    Get Text    xpath=html/body/div[1]/div/div/section/div/h3/a
     Should Be Equal    ${Get_Page_Title}    Game Management
 

@@ -1,17 +1,13 @@
 *** Variables ***
 ${BROWSER}        Chrome
 ${DELAY}          0
-${address}        172.16.50.51:9000
-${protocol}       http
-${SERVER}         ${protocol}://${address}    # server setting
-${USERNAME}       kenny
-${PASSWORD}       123456
-${testingaccountID_player}    QATestingAccount001
-${testingaccountID_user}    autotestuser
-${testingpwd_user}    123456
-${Accountname}    tsaic30
-${APIserverIP}    172.16.50.52
+${SERVER_jenkins}         https://jenkins.star9ad.com:8083/job/BO_automation_Chrome/    # server setting
+${SERVER_gmail}         https://gmail.com  # server setting
 
+${USERNAME_gmail}       charles.t@gen-game.com
+${PASSWORD_gmail}       19770530
+${USERNAME_jenkins}    charles.t
+${PASSWORD_jenkins}    123456
 
 *** Keywords ***
 Click Menu Tree

@@ -25,8 +25,9 @@ Input Password
 
 Input captcha
     ${Get_captcha}=    Get Text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[4]
-    Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
-	Sleep    2s
+    #Input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/input    ${Get_captcha}
+    input text    xpath=html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/span/span/input    ${Get_captcha}
+    Sleep    2
 
 Submit Credentials
     Sleep    2
@@ -38,5 +39,5 @@ Open Broser and Login automatically
     Input Password
     Input captcha
     Submit Credentials
-	Sleep    2
+    Sleep    2
     Wait Until Element is Visible    xpath=html/body/div[1]/div/div/section/div/div/div[1]/div    5
