@@ -138,6 +138,7 @@ Auto Refill Token UID After Clear
     input text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[4]/div/div/div[2]/div/input    vincenttest
     Sleep    2
     Click Element    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[2]/div/div/button[2]
-    Sleep    0.5
+    Sleep    1
+    Choose OK On Next Confirmation
     ${error_message}    get text    xpath=html/body/div[1]/div/div/section/div/div/div/form/div[1]/div[2]/div/div/div[2]/div/div
     should be equal    ${error_message}    This field is required, Invalid format
