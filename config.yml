@@ -1,5 +1,4 @@
 aws:
-  # Credentials can be hardcoded or set in environment variables
   access_key_id: AKIAIN7K6FAZS7ZYVLSA
   secret_access_key: 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
   s3:
@@ -9,71 +8,70 @@ aws:
       jsonpath_assets: 
       log: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
       raw:
-        in:                  # This is a YAML array of one or more in buckets - you MUST use hyphens before each entry in the array, as below
-          - s3://elasticbeanstalk-us-west-1-064536403946/resources/logs         # e.g. s3://my-old-collector-bucket
-          - s3://elasticbeanstalk-us-west-1-064536403946/resources/logs         # e.g. s3://my-new-collector-bucket
+        in:
+          - s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
         processing: s3://elasticbeanstalk-us-west-1-064536403946
-        archive: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs    # e.g. s3://my-archive-bucket/raw
+        archive: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
       enriched:
-        good: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs       # e.g. s3://my-out-bucket/enriched/good
-        bad: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs        # e.g. s3://my-out-bucket/enriched/bad
-        errors: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs     # Leave blank unless :continue_on_unexpected_error: set to true below
-        archive: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs    # Where to archive enriched events to, e.g. s3://my-archive-bucket/enriched
+        good: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
+        bad: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
+        errors: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
+        archive: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
       shredded:
-        good: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs       # e.g. s3://my-out-bucket/shredded/good
-        bad: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs        # e.g. s3://my-out-bucket/shredded/bad
-        errors: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs     # Leave blank unless :continue_on_unexpected_error: set to true below
-        archive: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs    # Where to archive shredded events to, e.g. s3://my-archive-bucket/shredded
+        good: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
+        bad: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
+        errors: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
+        archive: s3://elasticbeanstalk-us-west-1-064536403946/resources/logs
   emr:
     ami_version: 5.9.0
-    region: us-west-1        # Always set this
-    jobflow_role: EMR_EC2_DefaultRole # Created using $ aws emr create-default-roles
-    service_role: EMR_DefaultRole     # Created using $ aws emr create-default-roles
-    placement:      # Set this if not running in VPC. Leave blank otherwise
-    ec2_subnet_id: subnet-46a42c1e # Set this if running in VPC. Leave blank otherwise
+    region: us-west-1
+    jobflow_role: EMR_EC2_DefaultRole
+    service_role: EMR_DefaultRole
+    placement:
+    ec2_subnet_id: subnet-46a42c1e
     ec2_key_name: snowplow-ec2
-    bootstrap: []           # Set this to specify custom boostrap actions. Leave empty otherwise
+    bootstrap: []
     software:
-      hbase:                # Optional. To launch on cluster, provide version, "0.92.0", keep quotes. Leave empty otherwise.
-      lingual:              # Optional. To launch on cluster, provide version, "1.1", keep quotes. Leave empty otherwise.
+      hbase:
+      lingual:
     # Adjust your Hadoop cluster below
     jobflow:
-      job_name: My cluster 2 # Give your job a name
+      job_name: My cluster 2
       master_instance_type: m3.xlarge
       core_instance_count: 1
       core_instance_type: m3.xlarge
-      core_instance_ebs:    # Optional. Attach an EBS volume to each core instance.
-        volume_size: 80    # Gigabytes
+      core_instance_ebs:    
+        volume_size: 80
         volume_type: "gp2"
-        volume_iops: 400    # Optional. Will only be used if volume_type is "io1"
-        ebs_optimized: false # Optional. Will default to true
-      task_instance_count: 1 # Increase to use spot instances
+        volume_iops: 400
+        ebs_optimized: false
+      task_instance_count: 1
       task_instance_type: m3.xlarge
-      task_instance_bid: 0.015 # In USD. Adjust bid, or leave blank for non-spot-priced (i.e. on-demand) task instances
-    bootstrap_failure_tries: 3 # Number of times to attempt the job in the event of bootstrap failures
+      task_instance_bid: 0.015
+    bootstrap_failure_tries: 3
     configuration:
       yarn-site:
         yarn.resourcemanager.am.max-attempts: "1"
       spark:
         maximizeResourceAllocation: "true"
-    additional_info:        # Optional JSON string for selecting additional features
+    additional_info:
 collectors:
-  format: 'clj-tomcat' # For example: 'clj-tomcat' for the Clojure Collector, 'thrift' for Thrift records, 'tsv/com.amazon.aws.cloudfront/wd_access_log' for Cloudfront access logs or 'ndjson/urbanairship.connect/v1' for UrbanAirship Connect events
+  format: 'clj-tomcat'
 enrich:
   versions:
-    spark_enrich: 1.13.0 # Version of the Spark Enrichment process
-  continue_on_unexpected_error: true # Set to 'true' (and set :out_errors: above) if you don't want any exceptions thrown from ETL
-  output_compression: GZIP # Compression only supported with Redshift, set to NONE if you have Postgres targets. Allowed formats: NONE, GZIP
+    spark_enrich: 1.14.0
+  continue_on_unexpected_error:
+  output_compression: NONE
 storage:
   versions:
     rdb_loader: 0.14.0
-    rdb_shredder: 0.13.0        # Version of the Spark Shredding process
-    hadoop_elasticsearch: 0.1.0 # Version of the Hadoop to Elasticsearch copying process
+    rdb_shredder: 0.13.0
+    hadoop_elasticsearch: 0.1.0
 monitoring:
-  tags: {test} # Name-value pairs describing this job
+  tags: {test}
   logging:
     level: DEBUG # You can optionally switch to INFO for production
   snowplow:
     method: get
     app_id: snowplow # e.g. snowplow
-    collector: SnowplowCollectorDemo-env.us-west-1.elasticbeanstalk.com # e.g. d3rkrsqld9gmqf.cloudfront.net
+    collector: SnowplowCollectorDemo-env.us-west-1.elasticbeanstalk.com
