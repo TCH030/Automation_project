@@ -1,6 +1,6 @@
 aws:
-  access_key_id: AKIAIN7K6FAZS7ZYVLSA
-  secret_access_key: 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
+  access_key_id:
+  secret_access_key:
   s3:
     region: us-west-1
     buckets:
